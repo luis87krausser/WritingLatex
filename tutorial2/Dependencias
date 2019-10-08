@@ -1,0 +1,28 @@
+Para utilizar LaTeX, lo primero es instalar una distribución. TeXlive es la distribución 
+recomendada para usuarios de GNU/Linux y de Windows.
+
+- Usuarios de Windows descargar el *.iso vía torrent desde
+https://www.tug.org/texlive/acquire-iso.html
+
+- Usuarios de GNU/Linux pueden instalar por terminal o línea de comandos:
+Ubuntu/Debian: sudo apt-get install texlive-full
+Fedora: su -c 'dnf -y install texlive-scheme-full'
+
+Luego es necesario (pero no escencial), instalar un editor.
+Recomendamos TeXstudio:
+
+- Usuarios de Windows descargar el *.exe desde
+https://www.texstudio.org/
+
+- Usuarios de GNU/Linux pueden instalar por terminal o línea de comandos:
+Ubuntu/Debian: sudo apt-get install texstudio
+Fedora: su -c 'dnf -y install texstudio'
+
+-Software adicional, se enuentran los paquetes svg2pdf, pstoedit, entre otros.
+La instalación de los mismos se encuentra en el apéndice de la revista digital
+"Edición de textos científicos LaTeX 2017" disponible en:
+https://tecdigital.tec.ac.cr/revistamatematica/Libros/LATEX/LaTeX_2014.pdf
+
+Usuarios de Windows deben instalar: Ghostscript, GsView, Image Magic y Pstoedit.
+
+Usuarios de GNU/Linux: svg2pdf, pstoedit, pdf2svg.
