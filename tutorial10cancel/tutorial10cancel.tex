@@ -1,0 +1,110 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\sisetup{%
+	detect-family,
+	%alsoload = synchem,
+	%per-mode = fraction,
+	%per-mode = symbol,
+	%separate-uncertainty = true,
+	output-decimal-marker = {,}
+	%exponent-product = \cdot
+	%inter-unit-product =\cdot
+}
+\usepackage{chemmacros}
+\chemsetup{modules=all}
+\usepackage{cancel}
+%\usepackage[thicklines, makeroom]{cancel}
+\title{Cancel}
+\author{Luis}
+\date{}
+
+%Definiendo un nuevo estado
+\NewChemState\ElPot{ symbol=E , subscript-pos=right , superscript= , unit=\volt}
+\NewChemState\ElPotC{ symbol=E ,pre= , subscript-pos=right , subscript-right = C, unit=\volt}
+\NewChemState\ElPotA{ symbol=E ,pre= , subscript-pos=right , subscript-right = A, unit=\volt}
+\begin{document}
+\maketitle
+
+\section{Modos de cancel}
+\subsection{cancel}
+\begin{equation*}
+\frac{x^{\cancel{2}}}{\cancel{x}}
+\end{equation*}
+
+\subsection{bcancel}
+\begin{equation*}
+\frac{j^{\bcancel{2}}}{\bcancel{j}}
+\end{equation*}
+
+\subsection{xcancel}
+\begin{equation*}
+\xcancel{1} + x = \xcancel{1}
+\end{equation*}
+
+\subsection{cancelto}
+\begin{equation*}
+\frac{m^{\cancelto{2}{5}}}{\cancel{m^3}}
+\end{equation*}
+
+\section{cancel + siunitx}
+\begin{equation*}
+\SI{100}{\cancel\milli\liter} \times \frac{\SI{1}{\liter}}{\SI{1000}{\cancel\milli\liter}} = \SI{0.1}{\liter}
+\end{equation*}
+
+%\SI{\cancel 12}{\cal}
+%$\cancel{\num{e6}}\si{\cal}$
+
+\section{cancel + chemmacros}
+\texttt{$\backslash{}$cancel} dentro de \texttt{$\backslash{}$ch}:
+
+\ch{\cancel{Na\pch{}} \aq{}}
+
+\ch{\cancel{2 Na\pch{}} \aq{}}
+
+\noindent Primero \texttt{$\backslash{}$cancel} y adentro \texttt{$\backslash{}$ch}:
+
+$\cancel{\ch{2 Na\pch{}}}$
+
+\section{Ejemplos completos}
+
+\subsection{Factor unitario}
+{\it Una muestra de hulla contiene \SI{1,6}{\percent} en masa de azufre. Para evitar la contaminación al quemarla se trata el dióxido de azufre formado con \si{\cal}. Calcular la masa diaria (en \si{\kg}) de óxido de calcio que se necesitan en una planta que utiliza \SI{6,60e6}{\kg} de hulla por día.}
+
+R: \SI{184.800}{\kg}
+
+
+\begin{equation*}
+\SI{6.60e6}{\cancel\kilogram\of{Hulla}}\times\frac{\SI{1,6}{\cancel\kilogram\of{\ch{S}}}}{\SI{100}{\cancel\kilogram\of{Hulla}}}
+\times\frac{\SI{0,064}{\cancel\kilogram\of{\ch{SO2}}}}{\SI{0,03206}{\cancel\kilogram\of{\ch{S}}}}
+\times\frac{\SI{0,080}{\cancel\kilogram\of{\ch{SO3}}}}{\SI{0,064}{\cancel\kilogram\of{\ch{SO2}}}}
+\times\frac{\SI{0,05608}{\kilogram\of{\ch{CaO}}}}{\SI{0,080}{\cancel\kilogram\of{\ch{SO3}}}}
+\end{equation*}
+
+\begin{equation*}
+= 184717,65\;\si{\kilogram}\;\ch{CaO}
+\end{equation*}
+
+{\it Pasar \SI{100}{\milli\liter} a \si{\liter}}
+
+
+
+\subsection{Redox}
+{\it Escribir las hemirreacciones correspondientes a la carga y descarga de un acumulador de
+Pb.} 
+\begin{align*}
+\ch{PbO2 + HSO4\mch{} + 5 H\pch{} +} \cancel{2 \ch{\el}} &\ch{-> PbSO4 + 2 H2O} &\quad&\ElPotC{-1,70} \\
+\ch{Pb\sld{} + SO4\mch[2] &-> PbSO4 +} \cancel{2  \ch{\el}} &\quad&\ElPotA{-0,356} \\
+\cline{1-2}
+\ch{PbO2 + HSO4\mch{} + 5 H\pch{} + Pb \sld{} &-> 2 PbSO4 + 2 H2O} &\quad& \ElPot{2,06}
+\end{align*}
+	
+\begin{reaction}
+{\cancel{2 H2}}
+\end{reaction}
+
+\end{document}
