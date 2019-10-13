@@ -1,0 +1,67 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\sisetup{
+	%per-mode=symbol
+}
+\usepackage{chemmacros}
+\chemsetup{modules=all}
+\title{Chemmacros: Módulo thermodynamics}
+\author{Luis}
+\date{}
+
+%Definiendo un nuevo estado
+\NewChemState\ElPot{ symbol=E , subscript-pos=right , superscript= , unit=\volt}
+\NewChemState\ElPotC{ symbol=E ,pre= , subscript-pos=right , subscript-right = C, unit=\volt}
+\NewChemState\ElPotA{ symbol=E ,pre= , subscript-pos=right , subscript-right = A, unit=\volt}
+
+
+\begin{document}
+\maketitle
+\section{Macro State}
+\state{A}, 
+\state[superscript-right= ]{A}, 
+\state[subscript-left=f]{G}, 
+\state[subscript-left=f, superscript-right= ]{G}, 
+\state[subscript-right=\ch{Na\pch{}}/\ch{Na}]{E}, 
+\state[superscript-right=\SI{1000}{\celsius}]{H}
+
+\subsection{Inclusión en el entorno equations}
+La variación de energía de Gibbs para un proceso a temperatura y presión constantes viene dada por: 
+\begin{equation*}
+\state{G} = \state{H} - T\state{S}
+\end{equation*}
+
+El \state[superscript-right=]{G} para una reacción viene dado:
+\begin{equation*}
+\state[superscript-right=]{G} = \state{G} + RT \ln Q
+\end{equation*}
+
+\section{Variables termodinámicas}
+El módulo de thermodynamics proporciona algunos comandos para variables termodinámicas específicas.
+
+\enthalpy{123}, \entropy{123}, \gibbs{123}
+
+\subsection{subíndices}
+\enthalpy(r){123}, \enthalpy(f){454}
+
+\subsection{Más opciones}
+\entropy{56.7}, 
+\entropy[pre= ,superscript=]{56.7}
+\entropy[pre=$\Delta$,superscript=]{56.7},
+\gibbs[post=\ch{CaF2}]{56.7}
+
+\subsection{Modificando las unidades}
+\enthalpy[unit=\kilo\joule]{-285.56}, 
+\enthalpy[unit=\joule]{-285.56e3}, 
+%\enthalpy{-285.56}
+
+\section{Definiendo nuevos estados}
+\ElPot{0.22}, \ElPotC{0.44}, \ElPotA{0.55}, 
+\\ 
+\ElPotC(\ch{Sn\pch[2]}/\ch{Sn}){-0.136}, \ElPotC($\ch{Sn\pch[2]}\mid\ch{Sn}$){-0.136}
+\end{document}
