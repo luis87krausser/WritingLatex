@@ -1,0 +1,60 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+ \usepackage{chemmacros}
+\chemsetup{modules={all}}
+\usepackage{chemfig}
+\usepackage{chemscheme}
+\usepackage{booktabs}
+\usepackage{lmodern}
+\title{Elements:\\ Configuraciones electr\'onicas e Is\'otopos}
+\author{Krausser}
+\date{}
+\setlength{\parindent}{0cm}
+\renewcommand{\baselinestretch}{2}
+
+\chemsetup[redox]{pos = side}
+
+\begin{document}
+\maketitle
+
+\section*{Configuraciones electr\'onicas}
+\ch{Li}:\elconf{3}, \'o \elconf{Li}\\
+\setelectrondistribution{3}{2}
+\ch{Li\pch{}}: \elconf{3} \'o  \writeelconf{2}
+
+\ch{Cu}:\elconf{29}, \'o \elconf{Cu}\\
+\setelectrondistribution{29}{2,2+6,2+6+10}
+\ch{Cu\pch{}}: \elconf{29} \'o  \writeelconf{2,2+6,2+6+10}
+
+
+\vspace{1cm}\fbox{Todav\'ia no existe forma de escribir configuraciones del tipo [Ar]d$^{10}$4s$^1$}
+
+\section*{Is\'otopos}
+\isotope{90,Y}, \isotope*{90,Y}, \isotope{14,C}, \isotope*{14,C}
+
+
+\isotope{C}, \isotope*{C}, me devuelve el is\'otopo m\'as com\'un.
+
+El isótopo radiactivo del \isotope*{40,K} decae a \isotope*{40,Ar} con una vida media de \SI{1.2e9}{a\tilde{n}os}.
+
+El isótopo radiactivo del \isotope{40,K} decae a \isotope{40,Ar} con una vida media de \SI{1.2e9}{a\tilde{n}os}.
+
+\begin{equation*}
+\isotope{40,K} \ch{->} \isotope{40,Ar} + ^{0}_{1}\beta
+\end{equation*}
+
+\subsection*{Opciones de isotope}
+\isotope{14,C}
+\chemsetup[isotopes]{format=side}
+\isotope{14,C}
+\chemsetup[isotopes]{side-connect=}
+\isotope{14,C}
+
+ 
+\end{document}
