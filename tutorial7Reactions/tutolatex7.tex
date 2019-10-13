@@ -1,0 +1,52 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{chemmacros}
+\chemsetup{modules={all}}
+
+
+%traducir reaction por reacciones
+\DeclareChemTranslations{list-of-reactions}{English = \'Indice de reacciones qu\'imicas}
+\DeclareChemTranslations{reaction}{English = Reacci\'on}
+\DeclareChemTranslations{reactions}{English = Reacciones}
+\DeclareChemTranslations{Reaction}{English = Reacci\'on}
+
+\begin{document}
+\section{Entorno reactions}
+
+\begin{reaction}
+H2O + CO2 <<=> H2CO3
+\end{reaction}
+
+\begin{reaction*}
+	1/2 H2O + CO2 <<=> H2CO3
+\end{reaction*}
+
+Si modificamos el tag:
+\chemsetup[reactions]{
+before-tag = \bf R.,
+tag-open= (,
+tag-close=)
+}
+\begin{reaction}
+1/2 H2O + CO2 <<=> H2CO3
+\end{reaction}
+
+Formaci\'on del \ch{H2SO4}
+\begin{reactions}
+SO2 + 1/2O2 &-> SO3\\
+SO3 + H2O &-> H2SO4
+\end{reactions}
+
+\begin{reactions*}
+AlCl3 + 3 H2O &-> Al(OH)3 \sld{} + 3 HCl \gas{} \\
+Al(H2O)6\pch[3] + 2 H2O &-> [Al(H2O)5OH]\pch[2] + H3O\pch
+\end{reactions*}
+
+\listofreactions
+
+
+\end{document}
