@@ -1,0 +1,63 @@
+\documentclass[20pt,a4paper]{extarticle}
+\usepackage[utf8]{inputenc}
+%\usepackage{anyfontsize}
+%\usepackage[16pt]{moresize}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{chemmacros}
+\chemsetup{modules={all}}
+%\usepackage{bookman}
+\title{Siunitx}
+\author{Luis}
+\date{}
+\usepackage{siunitx}
+\sisetup{%
+	detect-family,
+	%alsoload = synchem,
+	%per-mode = fraction,
+	%per-mode = symbol,
+	separate-uncertainty = true,
+	%output-decimal-marker = {,}
+	%exponent-product = \cdot
+	inter-unit-product =\cdot
+}
+
+%\usepackage{cellspace}
+\usepackage{booktabs}
+\begin{document}
+\maketitle
+\section{\'Angulos y n\'umeros}
+\ang{45.698},\\
+\num{0.123},\\
+\num{e-10},\\
+\num{4.5e-5}\\
+\num{1.234(5)} o \num{1.234 \pm 0.005}
+\num[separate-uncertainty = true]{1.234(5)}
+
+
+\section{Unidades}
+\si{\Molar}, 
+\si{\degreeCelsius},
+\si{\farad}, 
+\si{\coulomb}, 
+\si{\micro\liter}, 
+%\si{\mole},
+\si{\newton\meter}
+\si{\cubic\centi\meter}, 
+\si{\mole\per\cubic\centi\meter}, 
+\si{\second^{-1/2}}
+
+
+\section{Unidades de...}
+\si{\Molar\of{\ch{H2SO4}}}
+
+\si{\liter\of{\ch{O2}}}
+
+\section{N\'umeros con unidades}
+\SI{4.3}{\liter}, 
+\SI{4.5e-3}{\Molar\of{\ch{H2SO4}}}, 
+\SI{0.05 \pm 0.01}{\Molar\of{\ch{H2SO4}}}
+
+\end{document}
