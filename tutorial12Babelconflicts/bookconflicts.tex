@@ -1,0 +1,151 @@
+\documentclass[10pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\usepackage[spanish]{babel}
+\usepackage{chemfig}
+\usepackage{chemscheme}
+\usepackage{chemmacros}
+\chemsetup{
+	modules=all,
+}
+\usepackage{siunitx}
+\sisetup{%
+	output-decimal-marker = {,},
+	inter-unit-product = \ensuremath{{}\cdot{}}
+}
+\usepackage[toc,title,page]{appendix}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{cite}
+\usepackage{nomencl}
+\usepackage{cancel}
+\usepackage{pdfpages}
+
+%----------------------TRADUCCIONES--------------------
+
+\renewcommand*{\listfigurename}{\'Indice de Figuras}
+\renewcommand{\listtablename}{\'Indice de Tablas}
+\renewcommand{\contentsname}{Contenido}
+\renewcommand{\partname}{Parte}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\chaptername}{Cap\'itulo} % para ’book’
+\renewcommand{\bibname}{Bibliograf\'ia} % para ’book’
+\renewcommand{\appendixname}{Anexo}
+\renewcommand\appendixtocname{Anexos}
+\renewcommand\appendixpagename{ANEXOS}
+\renewcommand{\nomname}{\'Indice de S\'imbolos y Abreviaciones}
+
+\usepackage{minted}
+\renewcommand{\listingscaption}{C\'odigo}
+\renewcommand\listoflistingscaption{\'Indice de c\'odigos fuente}
+
+
+%\renewcommand{\abstractname}{Resumen} %en article
+%\renewcommand{\refname}{Bibliografía} %en article
+
+\newcommand{\rta}{\underline{\textbf{Respuesta:}} }
+
+\begin{document}
+%\includepdf[pages=-]{Ideatapa.pdf}
+
+\begin{titlepage}
+\begin{center}
+{\Huge Soluci\'on: conflictos con {\ttfamily Babel}	}
+\end{center}
+
+\end{titlepage}
+\tableofcontents % indice de contenidos
+\cleardoublepage
+
+%------------------------Construye el indice de Figuras-------------------------------
+\addcontentsline{toc}{chapter}{\'{I}ndice de figuras} % para que aparezca en el indice de contenidos
+\listoffigures % indice de figuras
+
+%---------------Construye indice de tablas------------------------------------------------
+\renewcommand*{\listtablename}{\'{I}ndice de tablas}
+\cleardoublepage
+\listoftables % indice de tablas
+\addcontentsline{toc}{chapter}{\'{I}ndice de tablas} % para que aparezca en el indice de contenidos
+\cleardoublepage
+
+%-----------------------Construye el listado de Codigos fuente --------------------------
+\listoflistings %To print the list with all listing elements use \listoflistings
+\addcontentsline{toc}{chapter}{Lista de c\'odigos fuente} % para que aparezca en el indice de
+
+\chapter{Problemas bloques d y f}
+\begin{enumerate}
+	
+	\item  ¿Se desproporcionan los siguientes iones en condiciones estándar? Calcular \state[subscript-right=r]{G} y la constante de equilibrio para la reacción de dismutación.
+	\begin{enumerate}
+		\item \ch{Cu\pch{}}
+		\item \ch{Hg2\pch[2]}
+	\end{enumerate}
+	
+	\item  Balancear las siguientes ecuaciones de óxido-reducción:
+	\begin{enumerate}
+		\item \ch{MnO4\mch{} + Co(OH)2\sld{} -> MnO2 + Co(OH)3 \sld{}}
+		\item \ch{Ag\sld{} + NO3\mch{} + H3O\pch{} -> Ag\pch{} + NO + H2O}
+		\item \ch{Cr(OH)3 + ClO3\mch{} -> CrO4\mch[2] + Cl\mch{}}
+		\item \ch{Zn\sld{} + OH\mch{} + H2O -> [Zn(OH)4]\mch[2] + H2}
+		\item \ch{AgNO3 + Zn\sld{} -> Zn(NO3)2 + Ag\sld{}}
+	\end{enumerate}
+	
+	\item Para la reacción: \ch{Fe + Zn\pch[2] <=> Fe\pch[2] + Zn}. ¿Cuál es la concentración de equilibrio de \ch{Fe\pch[2]}
+	que se alcanza cuando se coloca un trozo de hierro dentro de una disolución \SI{1}{\Molar} de \ch{Zn\pch[2]},
+	suponiendo que la concentración de \ch{Zn\pch[2]} no varía?
+	
+	\item  Una disolución de permanganato de potasio se prepara disolviendo \SI{3,16}{\gram} de la sal en agua y
+	llevando el volumen a \SI{1}{\liter}. Calcular:
+	\begin{enumerate}
+		\item  La molaridad de la solución de permanganato.
+		\item El volumen de dicha solución necesario para neutralizar \SI{12}{\milli\liter} de peróxido de hidrógeno
+		de \num{5,60} volúmenes.
+	\end{enumerate}
+	
+	\item Una disolución es \SI{0,01}{\Molar} en iones cromato e iones cloruro. Si se le añade a la misma una
+	disolución de nitrato de plata:
+	\begin{enumerate}
+		\item  ¿Qué sal precipita primero?
+		\item ¿Cuál es la concentración del ion que precipita en primer lugar cuando se inicia la
+		precipitación del segundo?
+	\end{enumerate}
+	Kps \ch{Ag2CrO4} = \num{1,1e-12}; Kps \ch{AgCl} = \num{1,8e-10}.
+	
+	\item  ¿Por qué el oro se disuelve en agua regia? Justificar.
+	
+	\item Explicar por qué se ennegrece la plata al estar expuesta al aire.
+	
+	\item ¿Qué diferencia al mercurio de los otros elementos del grupo 12?
+	\begin{enumerate}
+		\item Es un líquido.
+		\item Es tóxico.
+		\item Forma el catión \ch{Hg2\pch[2]} con un enlace \ch{Hg-Hg}.
+	\end{enumerate}
+	
+	\rta a) Es un líquido; y c) Forma el catión \ch{Hg2\pch[2]} con un enlace \ch{Hg-Hg}.
+	
+	\item  Se encontró que una muestra de \isotope*{90,Y} aislada recientemente tenía una actividad de \num{9,8e5}
+	desintegraciones por minuto a la 1:00 P.M. del 3 de diciembre de 2004. A las 2:15 P.M. del
+	17 de diciembre de 2004, su actividad era de \num{2,6e4} desintegraciones por minuto. Calcular la
+	vida media del \isotope*{90,Y}.
+	
+	
+	
+\end{enumerate}
+
+\appendix
+\begin{appendices}
+\printnomenclature
+	
+\chapter{Mi primer anexo}
+Ac\'a va el primer anexo
+
+\chapter{Mi segundo anexo}
+Ac\'a va el primer anexo
+\end{appendices}
+
+\end{document}

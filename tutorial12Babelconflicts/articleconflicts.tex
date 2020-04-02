@@ -1,0 +1,170 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{Luis}
+\title{Soluci\'on: conflictos con {\ttfamily Babel}}
+\date{}
+%\usepackage[spanish]{babel}
+%\usepackage[spanish,es-noquoting]{babel}
+\usepackage[toc,title,page]{appendix}
+\usepackage{chemfig}
+\usepackage{chemscheme}
+\usepackage{chemmacros}
+\chemsetup{
+	modules=all,
+}
+\usepackage{siunitx}
+\sisetup{%
+	output-decimal-marker = {,},
+	inter-unit-product = \ensuremath{{}\cdot{}}
+}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage[sectionbib,square,sort,numbers]{natbib}
+
+\usepackage{nomencl}
+\usepackage{cancel}
+
+\newcommand{\rta}{\underline{\textbf{Respuesta:}} }
+
+
+
+%----------------------TRADUCCIONES--------------------
+\renewcommand{\contentsname}{\'Indice general}
+\renewcommand*{\listfigurename}{\'Indice de Figuras}
+\renewcommand{\listtablename}{\'Indice de Tablas}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\appendixname}{Anexo}
+\renewcommand\appendixtocname{Anexos}
+\renewcommand\appendixpagename{ANEXOS}
+\renewcommand{\refname}{Bibliograf\'ia}
+\renewcommand{\nomname}{\'Indice de S\'imbolos y Abreviaciones}
+\renewcommand{\abstractname}{Resumen} %en article
+
+%%%%SI USAS BOOK
+%\renewcommand{\partname}{Parte}
+%\renewcommand\bibname}{Bibliograf\'ia}
+
+%\renewcommand{\listingscaption}{C\'odigo}
+%\renewcommand\listoflistingscaption{\'Indice de c\'odigos fuente}
+
+
+
+\begin{document}
+\maketitle
+
+\tableofcontents % indice de contenidos
+%------------------------Construye el indice de Figuras-------------------------------
+%\addcontentsline{toc}{section}{\'{I}ndice de figuras} % para que aparezca en el indice de contenidos
+\listoffigures % indice de figuras
+%\renewcommand*{\listtablename}{\'{I}ndice de tablas}
+
+\listoftables % indice de tablas
+\addcontentsline{toc}{section}{\'{I}ndice de tablas}
+
+\section{Problemas bloques d y f}
+\begin{enumerate}
+	\item Escribir las configuraciones electr\'{o}nicas de: \ch{Sc}, \ch{Ti\pch[4]}, \ch{V\pch[2]}, \ch{Cr}, \ch{Mn\pch[2]}, \ch{Mn\pch[3]}, \ch{Fe\pch[3]}, \ch{Co\pch[3]} , \ch{Zn},
+	\ch{Eu\pch[2]}, \ch{U}.
+	
+	\rta
+	\begin{itemize}
+		\item \ch{Sc}: \elconf{Sc}
+		\item \ch{Ti\pch[4]}: \writeelconf{2,2+6,2+6+2,2}
+		\item \ch{V\pch[2]}: \writeelconf{2,2+6,2+6+1,2}
+		\item \ch{Cr}: \elconf{Cr}
+		\item \ch{Mn\pch[3]}: \writeelconf{2,2+6,2+6+5,1}
+		\item \ch{Fe\pch[3]}: \writeelconf{2,2+6,2+6+3,2}
+		\item \ch{Co\pch[3]}: \writeelconf{2,2+6,2+6+4,2}
+		\item \ch{Zn}: \elconf{Zn}
+		\item \ch{Eu\pch[2]}: \writeelconf{2,2+6,2+6+10,2+6+10+5,2+6,2}
+		\item \ch{U}: \elconf{U}
+	\end{itemize}
+	\item Una aleación metálica está constituida por cobre y cinc. Al analizar \SI{0,832}{\gram} de la aleación se
+	obtuvieron \SI{0,673}{\gram} de sulfocianuro de cobre (I) y \SI{0,480}{\gram} de pirofosfato de cinc. Calcular el
+	porcentaje de cobre y de cinc en dicha aleación.
+	
+	\rta \ch{Cu}: \SI{63.55}{\gram\per\mole}, \ch{Zn}: \SI{65.38}{\gram\per\mole},\ch{CuSCN}: \SI{21.65}{\gram\per\mole}; \ch{Zn2P2O7}: \SI{304.70}{\gram\per\mole}
+	
+	\begin{align*}
+	\frac{\SI{0.673}{\cancel\gram\of{\ch{CUSCN}}}}{\SI{0.832}{\gram\of{Aleaci\acute{o}n}}} \times \frac{\SI{63.55}{\gram\of{\ch{Cu}}}}{\SI{121.63}{\cancel\gram\of{\ch{CUSCN}}}} \times 100 =& \SI{42.30}{\percent\of{\ch{Cu}}} \\
+	\frac{\SI{0.480}{\cancel\gram\of{\ch{Zn2P2O7}}}}{\SI{0.832}{\gram\of{Aleaci\acute{o}n}}} \times \frac{\SI{65.38}{\gram\of{\ch{Zn}}}}{\SI{304.70}{\cancel\gram\of{\ch{ZnP2O7}}}} \times 100 =& \SI{24.70}{\percent\of{\ch{Zn}}}
+	\end{align*}
+	
+	\item Una muestra de \SI{1,63}{\gram} de un óxido de cromo contiene \SI{1,12}{\gram} de cromo. Establecer la fórmula empírica de dicho óxido.
+	
+	\rta \si{\gram\of{O}} = \SI{1,63}{\gram\of{muestra}} - \SI{1,12}{\gram\of{Cr}} = \SI{0.51}{\gram\of{O}}
+	\begin{align*}
+	\frac{\SI{1,12}{\gram\of{Cr}}}{\SI{51.99}{\gram\of{Cr}}} = \num{0.021} &\quad \frac{\SI{0.51}{\gram\of{O}}}{\SI{16.0}{\gram\of{O}}} = \num{0.032}\\
+	\frac{\num{0.021}}{\num{0.021}} = 1 &\quad \frac{\num{0.032}}{\num{0.021}} \approx \num{1.5}
+	\end{align*}
+	
+	Si multiplico por 2 para obtener n\'umeros enteros, entonces la f\'ormula es: \ch{Cr2O3}
+	
+	\item  Una de las primeras etapas para la refinación de minerales sulfurados es el procedimiento de
+	tostación, en el que el mineral se calienta en presencia de oxígeno para formar un óxido
+	metálico y \ch{SO2\gas{}}. Calcular para la tostación de esfalerita (\ch{ZnS}) \state{H} \SI{298}{\kelvin} y \state{G} \SI{298}{\kelvin} de la reacción.
+	
+
+		
+\end{enumerate}
+
+\appendix
+%\addcontentsline{toc}{section}{Anexo}
+\renewcommand{\thesection}{\Alph{section}.\arabic{section}}
+\setcounter{section}{0}
+\begin{appendices}
+	\section{Problemas adicionales}
+	\begin{enumerate}
+		\item  Dada la celda \ch{Zn/Zn\pch[2]//Cu\pch[2]/Cu} a \SI{25}{\degreeCelsius}, calcular el potencial de la misma cuando las concentraciones de \ch{Cu\pch[2]} y \ch{Zn\pch[2]} son iguales.
+	
+	\item ¿Cuál es el estado de oxidación más común para los lantanoides?
+	\begin{enumerate}
+		\item +2
+		\item +3
+		\item +4
+	\end{enumerate}
+	
+	\rta b) +3
+	
+	\item El mayor estado de oxidación de los actinoides es:
+	\begin{enumerate}
+		\item +3
+		\item +4
+		\item +6
+	\end{enumerate}
+	\end{enumerate}
+
+
+
+
+%\phantomsection
+%\section{}
+%\printnomenclature
+
+\section{F\'ormulas}
+\begin{reactions}
+	A &<=> B "\label{reaccio6}" \\
+	C &<=> D "\label{reaccionRef5}" \\
+	A + C &<=> B + D "\label{reaccion_neta5}"
+\end{reactions}
+
+donde la \ref{reaccio6} tiene asociado \gibbs*[subscript-right=desc]{},
+\ref{reaccionRef5} \gibbs*[subscript-right=ref]{} y la reacción neta,
+\gibbs*[subscript-right=neto]{}. El valor de la energía libre de referencia
+puede ser experimental o estimado.
+%\newpage
+\nocite{*}
+\phantomsection
+\section{}
+%\addcontentsline{toc}{section}{Bibliograf\'ia}
+\bibliographystyle{newapa}
+\bibliography{biblio}
+\end{appendices}
+
+\end{document}
