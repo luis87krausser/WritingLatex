@@ -1,0 +1,83 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{pslatex}
+%\usepackage{cmbright}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{Luis}
+\title{Interlineado y sangr\'ia en \LaTeX}
+\date{}
+%\usepackage[english]{babel}
+%\usepackage[spanish,es-noquoting]{babel}
+%\usepackage[toc,title,page]{appendix}
+\usepackage{chemfig}
+\usepackage{chemscheme}
+\usepackage{chemmacros}
+\chemsetup{
+	modules=all,
+}
+\usepackage{siunitx}
+\sisetup{%
+	output-decimal-marker = {,},
+	inter-unit-product = \ensuremath{{}\cdot{}}
+}
+%\usepackage[hidelinks]{hyperref}
+%\usepackage{url}
+%\usepackage[sectionbib,square,sort,numbers]{natbib}
+
+%----------------------TRADUCCIONES--------------------
+\renewcommand{\contentsname}{\'Indice general}
+\renewcommand{\listfigurename}{\'Indice de Figuras}
+\renewcommand{\listtablename}{\'Indice de Tablas}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\refname}{Bibliograf\'ia}
+%\renewcommand{\nomname}{\'Indice de S\'imbolos y Abreviaciones}
+\renewcommand{\abstractname}{Resumen} %en article
+
+\usepackage{blindtext}
+
+%--------------Interlineado--------------------------
+\usepackage{setspace}
+\doublespacing
+%\onehalfspace
+%\singlespace
+%\spacing{3.0}
+
+%------------SI HAY CONFLICTOS CON SETSPACE-----
+%\renewcommand{\baselinestretch}{4}
+
+%---------Espacio entre parrafos-------------
+%\setlength{\parskip}{2cm}
+
+%----------------Sangria-----------------
+%\setlength{\parindent}{2cm}
+\setlength{\parindent}{0cm}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\blindtext[1]
+\end{abstract}
+\tableofcontents % indice de contenidos
+
+\section{Primera secci\'on}
+\Blindtext [4][1]
+
+\section{Segunda secci\'on}
+%\onehalfspace
+\blindtext[1]
+\blinditemize[4]
+\blindmathtrue
+\blindmathpaper
+\blindmathfalse
+\blindtext [2]
+
+\section{Tercera secci\'on}
+%\doublespacing
+ \Blindtext [4][1]
+\end{document}
