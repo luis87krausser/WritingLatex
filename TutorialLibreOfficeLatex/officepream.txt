@@ -1,0 +1,30 @@
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[usenames]{color}
+\usepackage{ifxetex}
+\usepackage{chemfig}
+\usepackage{chemscheme}
+\usepackage{chemmacros}
+\chemsetup{modules=all}
+\usepackage{modiagram}
+\usepackage{siunitx}
+\usepackage{cancel} 
+
+% XeLaTeX compiler
+\ifxetex
+
+    \usepackage{fontspec}
+    \usepackage{unicode-math}
+
+    % Uncomment these lines for alternative fonts
+    %\setmainfont{FreeSerif}
+    %\setmathfont{FreeSerif}
+
+% LaTeX compiler
+\else
+
+    % Uncomment this line for sans-serif maths font
+    %\everymath{\mathsf{\xdef\mysf{\mathgroup\the\mathgroup\relax}}\mysf}
+
+\fi
+ 
